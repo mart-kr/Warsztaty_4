@@ -1,0 +1,17 @@
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #5e35b1;
+    border-color: #8064A2;
+}
+
+body {
+    color: #1c2a48;
+    background-color: #d1c4e9;
+}
+
+label {
+    padding-top: 10px;
+}

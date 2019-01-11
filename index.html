@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warsztaty 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="style/style.css" rel="stylesheet">
+    <script src="js/app.js"></script>
+</head>
+<body>
+
+    <!-- add new book form -->
+    <div class="formContainer" style="background-color: #ede7f6">
+        <form action="http://localhost:8282/books" method="post" id="addBook" class="mx-auto" style="width: 70%">
+            <h3 class="pt-3">Dodaj książkę</h3>
+            <div class="row">
+                <div class="col">
+                    <label for="title">Tytuł</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="col">
+                    <label for="author">Autor</label>
+                    <input type="text" class="form-control" id="author" name="author">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="isbn">ISBN</label>
+                    <input type="text" class="form-control" id="isbn" name="isbn">
+                </div>
+                <div class="col">
+                    <label for="publisher">Wydawca</label>
+                    <input type="text" class="form-control" id="publisher" name="publisher">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="type">Typ</label>
+                <input type="text" class="form-control" id="type" name="type">
+            </div>
+            <button type="submit" class="btn btn-primary">Dodaj</button>
+        </form><br>
+    </div>
+
+    <!-- add book success alert -->
+    <div class="alert alert-success collapse" id="successAlert">
+        <p>Dodano książkę!</p>
+    </div>
+
+    <!-- list of books -->
+    <div id="bookList" class="bookList mx-auto" style="width: 70%"></div>
+
+    <!-- delete confirmation modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Usuń książkę</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Czy na pewno chcesz usunąć książkę?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+                    <button type="button" class="btn btn-primary" id="confirmDelete">Usuń</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
