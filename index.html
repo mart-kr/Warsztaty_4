@@ -11,46 +11,49 @@
     <script src="js/app.js"></script>
 </head>
 <body>
-
-    <!-- add new book form -->
-    <div class="formContainer" style="background-color: #ede7f6">
-        <form action="http://localhost:8282/books" method="post" id="addBook" class="mx-auto" style="width: 70%">
-            <h3 class="pt-3">Dodaj książkę</h3>
-            <div class="row">
-                <div class="col">
-                    <label for="title">Tytuł</label>
-                    <input type="text" class="form-control" id="title" name="title" required>
-                </div>
-                <div class="col">
-                    <label for="author">Autor</label>
-                    <input type="text" class="form-control" id="author" name="author">
-                </div>
+        <div class="row m-3">
+            <div class="col-md-6">
+                <!-- list of books -->
+                <div class="container" id="bookList" style="background-color: #ede7f6"></div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <label for="isbn">ISBN</label>
-                    <input type="text" class="form-control" id="isbn" name="isbn">
-                </div>
-                <div class="col">
-                    <label for="publisher">Wydawca</label>
-                    <input type="text" class="form-control" id="publisher" name="publisher">
-                </div>
+            <div class="col-md-6">
+                    <!-- add new book form -->
+                        <div class="formContainer" style="background-color: #ede7f6">
+                            <form action="http://localhost:8080/books" method="post" id="addBook" class="mx-auto" style="width: 90%">
+                                <h3 class="pt-3">Dodaj książkę</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="title">Tytuł</label>
+                                        <input type="text" class="form-control" id="title" name="title" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="author">Autor</label>
+                                        <input type="text" class="form-control" id="author" name="author">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="isbn">ISBN</label>
+                                        <input type="text" class="form-control" id="isbn" name="isbn">
+                                    </div>
+                                    <div class="col">
+                                        <label for="publisher">Wydawca</label>
+                                        <input type="text" class="form-control" id="publisher" name="publisher">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type">Typ</label>
+                                    <input type="text" class="form-control" id="type" name="type">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Dodaj</button>
+                            </form><br>
+                        </div>
+                    <!-- add book success alert -->
+                    <div class="row alert alert-success collapse mt-2 mx-auto w-80" id="successAlert">
+                        <p>Dodano książkę!</p>
+                    </div>
             </div>
-            <div class="form-group">
-                <label for="type">Typ</label>
-                <input type="text" class="form-control" id="type" name="type">
-            </div>
-            <button type="submit" class="btn btn-primary">Dodaj</button>
-        </form><br>
-    </div>
-
-    <!-- add book success alert -->
-    <div class="alert alert-success collapse" id="successAlert">
-        <p>Dodano książkę!</p>
-    </div>
-
-    <!-- list of books -->
-    <div id="bookList" class="bookList mx-auto" style="width: 70%"></div>
+        </div>
 
     <!-- delete confirmation modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
